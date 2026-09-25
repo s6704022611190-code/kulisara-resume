@@ -6,731 +6,821 @@
 <title>Kulisara Phuakinsaeng | Resume</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --navy:#172942;
+  --text:#52657b;
+  --pink:#ee8eae;
+  --pink-soft:#fff0f5;
+  --blue:#75b9df;
+  --blue-soft:#edf8fd;
+  --cream:#fffdfc;
+  --line:#e4ebf1;
+}
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:'DM Sans',sans-serif;
-    background:#f7f9fc;
-    color:#20304a;
+  font-family:'DM Sans',Arial,sans-serif;
+  background:#f6f8fa;
+  color:var(--navy);
 }
 
-.container{
-    width:min(1080px,92%);
-    margin:auto;
+.page{
+  width:min(1120px,94%);
+  margin:28px auto;
+  background:var(--cream);
+  box-shadow:0 12px 40px rgba(31,54,78,.07);
 }
 
 /* NAV */
 
 nav{
-    height:70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  height:72px;
+  padding:0 58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
 }
 
 .logo{
-    font-weight:700;
-    letter-spacing:3px;
-    font-size:17px;
-    color:#20304a;
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:3px;
 }
 
 .logo span{
-    color:#eb8dab;
+  color:var(--pink);
 }
 
-nav a{
-    text-decoration:none;
-    color:#637086;
-    font-size:13px;
-    margin-left:24px;
+.links{
+  display:flex;
+  gap:28px;
 }
 
-nav a:hover{
-    color:#e57f9f;
+.links a{
+  text-decoration:none;
+  color:#718096;
+  font-size:12px;
+  font-weight:600;
+  transition:.2s;
 }
 
-/* MAIN CARD */
-
-.resume{
-    background:white;
-    border-radius:28px;
-    overflow:hidden;
-    box-shadow:0 15px 45px rgba(47,78,108,.08);
-    margin-bottom:35px;
+.links a:hover{
+  color:var(--pink);
 }
 
 /* HERO */
 
 .hero{
-    min-height:430px;
-    padding:55px 65px;
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    align-items:center;
-    gap:50px;
-
-    background:
-      radial-gradient(circle at 95% 5%, #f8cfdb 0 85px, transparent 86px),
-      radial-gradient(circle at 75% 90%, #d9effb 0 110px, transparent 111px),
-      linear-gradient(135deg,#fffafa,#f7fbff);
+  min-height:480px;
+  padding:65px 70px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:70px;
 }
 
-.small-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:11px;
-    letter-spacing:2.4px;
-    font-weight:700;
-    color:#4388b6;
-    margin-bottom:15px;
-}
-
-.small-title::before{
-    content:"";
-    width:25px;
-    height:2px;
-    background:#eb8dab;
+.eyebrow{
+  color:var(--pink);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:54px;
-    line-height:1;
-    letter-spacing:-2px;
-    color:#172640;
+  font-size:55px;
+  line-height:1.04;
+  letter-spacing:-2.5px;
+  max-width:600px;
 }
 
 .hero h1 span{
-    display:block;
-    font-family:'Playfair Display',serif;
-    font-style:italic;
-    font-weight:600;
-    color:#e785a5;
-    margin-top:5px;
+  color:#4d9dcc;
 }
 
-.course{
-    margin-top:20px;
-    color:#53677e;
-    font-size:17px;
-    line-height:1.6;
-    max-width:520px;
+.major{
+  margin-top:21px;
+  font-size:17px;
+  font-weight:500;
+  color:#425b74;
 }
 
-.school{
-    margin-top:12px;
-    color:#8290a1;
-    font-size:13px;
-    line-height:1.6;
+.university{
+  margin-top:8px;
+  color:#8795a5;
+  font-size:13px;
+  line-height:1.6;
 }
 
-.tags{
-    display:flex;
-    gap:9px;
-    flex-wrap:wrap;
-    margin-top:23px;
+.intro{
+  max-width:500px;
+  margin-top:22px;
+  font-size:13px;
+  color:#718096;
+  line-height:1.8;
 }
 
-.tag{
-    padding:7px 13px;
-    border-radius:50px;
-    font-size:11px;
-    font-weight:600;
-    background:#e8f5fc;
-    color:#397ca7;
+.hero-buttons{
+  margin-top:27px;
+  display:flex;
+  gap:10px;
 }
 
-.tag.pink{
-    background:#fdebf1;
-    color:#ca6787;
+.button{
+  display:inline-block;
+  padding:11px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+
+.primary{
+  background:var(--navy);
+  color:white;
+}
+
+.secondary{
+  border:1px solid #dce5ec;
+  color:#597087;
+  background:white;
 }
 
 /* PHOTO */
 
-.photo-wrap{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.photo-area{
+  display:flex;
+  justify-content:center;
 }
 
-.photo-frame{
-    width:245px;
-    height:300px;
-    position:relative;
-    padding:9px;
-    background:#b9def3;
-    border-radius:120px 120px 24px 24px;
+.photo-card{
+  position:relative;
+  width:275px;
 }
 
-.photo-frame::before{
-    content:"";
-    position:absolute;
-    width:75px;
-    height:75px;
-    background:#efa0b9;
-    border-radius:50%;
-    left:-30px;
-    bottom:25px;
+.photo-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:var(--blue-soft);
+  border-radius:22px;
+  transform:translate(16px,16px);
 }
 
-.photo-frame img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center 24%;
-    border-radius:110px 110px 18px 18px;
-    position:relative;
-    z-index:2;
+.photo-card::before{
+  content:"";
+  position:absolute;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#f8c8d7;
+  left:-28px;
+  top:-25px;
 }
 
-/* CONTENT */
-
-.content{
-    padding:50px 65px 55px;
+.photo-card img{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  object-position:center 22%;
+  border-radius:20px;
+  display:block;
 }
 
-.section-label{
-    font-size:10px;
-    letter-spacing:2px;
-    font-weight:700;
-    color:#e47d9e;
-    margin-bottom:9px;
+.year{
+  position:absolute;
+  z-index:3;
+  right:-22px;
+  bottom:20px;
+  background:white;
+  padding:11px 16px;
+  border-radius:10px;
+  box-shadow:0 8px 25px rgba(31,54,78,.12);
 }
 
-.section-title{
-    font-size:27px;
-    color:#1d2c45;
-    margin-bottom:20px;
+.year small{
+  display:block;
+  color:#9aa6b4;
+  font-size:8px;
+  letter-spacing:1px;
+}
+
+.year strong{
+  font-size:12px;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:60px 70px;
+  border-top:1px solid var(--line);
+}
+
+.section-head{
+  margin-bottom:32px;
+}
+
+.section-head small{
+  display:block;
+  color:var(--pink);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.section-head h2{
+  font-size:30px;
+  letter-spacing:-1px;
 }
 
 /* ABOUT */
 
-.about{
-    display:grid;
-    grid-template-columns:.75fr 1.25fr;
-    gap:55px;
-    padding-bottom:45px;
-    border-bottom:1px solid #e5edf3;
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
 }
 
-.about p{
-    font-size:14px;
-    line-height:1.8;
-    color:#607086;
+.about-text{
+  color:var(--text);
+  font-size:14px;
+  line-height:1.9;
+}
+
+.quick-info{
+  display:grid;
+  gap:12px;
 }
 
 .info{
-    margin-top:20px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
 }
 
-.info-box{
-    background:#f8fbfd;
-    border:1px solid #e4edf3;
-    border-radius:13px;
-    padding:12px 14px;
+.info span{
+  color:#9aa6b4;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
-.info-box:nth-child(2){
-    background:#fff7f9;
-    border-color:#f5dfe6;
+.info strong{
+  color:#42586e;
+  font-size:12px;
+  text-align:right;
 }
 
-.info-box small{
-    display:block;
-    font-size:9px;
-    letter-spacing:1px;
-    color:#9ba8b6;
-    font-weight:700;
-    margin-bottom:3px;
+/* EDUCATION SKILLS */
+
+.study-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
 }
 
-.info-box strong{
-    font-size:12px;
-    color:#344a62;
+.study-card{
+  border-left:3px solid #acd9f1;
+  padding-left:18px;
 }
 
-/* EDUCATION + SKILLS */
-
-.two-column{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    padding:45px 0;
-    border-bottom:1px solid #e5edf3;
+.study-card small{
+  color:var(--pink);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
 }
 
-.education{
-    border-left:3px solid #a8d9f3;
-    padding-left:17px;
+.study-card h3{
+  font-size:15px;
+  line-height:1.5;
+  margin:8px 0 5px;
 }
 
-.education small{
-    font-size:10px;
-    color:#e37c9d;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.education h3{
-    margin:7px 0;
-    font-size:15px;
-    line-height:1.5;
-}
-
-.education p{
-    color:#718096;
-    font-size:12px;
-    line-height:1.7;
+.study-card p{
+  font-size:12px;
+  line-height:1.7;
+  color:#75869a;
 }
 
 .skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
 }
 
 .skill{
-    padding:8px 13px;
-    border-radius:50px;
-    background:#edf7fc;
-    color:#397aa4;
-    font-size:11px;
-    border:1px solid #d4eaf5;
+  padding:8px 13px;
+  border-radius:7px;
+  font-size:11px;
+  background:var(--blue-soft);
+  color:#397da6;
 }
 
 .skill:nth-child(even){
-    background:#fff1f5;
-    border-color:#f4d4df;
-    color:#bd6380;
+  background:var(--pink-soft);
+  color:#bd6784;
 }
 
 /* PROJECT */
 
-.project-section{
-    padding:45px 0;
-    border-bottom:1px solid #e5edf3;
-}
-
 .project{
-    display:grid;
-    grid-template-columns:70px 1fr;
-    gap:22px;
-    padding:24px;
-    background:linear-gradient(120deg,#eef8fd,#fff6f8);
-    border:1px solid #dfeaf1;
-    border-radius:18px;
+  display:grid;
+  grid-template-columns:110px 1fr auto;
+  gap:25px;
+  align-items:center;
+  padding:25px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
-.project-icon{
-    width:60px;
-    height:60px;
-    border-radius:17px;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    box-shadow:0 7px 20px rgba(58,89,115,.08);
+.project-number{
+  font-size:38px;
+  font-weight:700;
+  color:#acd9f1;
+}
+
+.project small{
+  color:var(--pink);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
 }
 
 .project h3{
-    font-size:17px;
-    margin-bottom:6px;
+  margin:5px 0 7px;
+  font-size:19px;
 }
 
 .project p{
-    color:#68798c;
-    font-size:12px;
-    line-height:1.7;
-    max-width:680px;
+  color:#718096;
+  font-size:12px;
+  line-height:1.7;
 }
 
 .project-tags{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
-    margin-top:12px;
+  margin-top:11px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
 }
 
 .project-tags span{
-    background:white;
-    border:1px solid #d9e6ee;
-    padding:5px 10px;
-    border-radius:50px;
-    font-size:9px;
-    color:#51687d;
+  padding:5px 9px;
+  border:1px solid #dce6ed;
+  border-radius:5px;
+  font-size:9px;
+  color:#63778a;
+}
+
+.project-type{
+  font-size:10px;
+  color:#8a98a8;
+  white-space:nowrap;
 }
 
 /* CONTACT */
 
-.contact{
-    margin-top:45px;
-    padding:32px 35px;
-    border-radius:20px;
-    background:linear-gradient(120deg,#dff2fc,#fce4ec);
+.contact-section{
+  background:linear-gradient(120deg,#203a58,#49637e);
+  color:white;
+  padding:60px 70px;
 }
 
-.contact-header{
-    margin-bottom:20px;
+.contact-section .section-head small{
+  color:#9bd7f5;
 }
 
-.contact-header h2{
-    font-size:25px;
-    color:#20334e;
+.contact-section .section-head h2{
+  color:white;
 }
 
-.contact-header p{
-    font-size:12px;
-    color:#748296;
-    margin-top:5px;
+.contact-intro{
+  color:#d1dbe5;
+  font-size:12px;
+  margin-top:8px;
 }
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
+.contact-list{
+  border-top:1px solid rgba(255,255,255,.16);
 }
 
-.contact-item{
-    background:rgba(255,255,255,.75);
-    border:1px solid rgba(255,255,255,.9);
-    border-radius:14px;
-    padding:15px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
+.contact-row{
+  min-height:76px;
+  display:grid;
+  grid-template-columns:150px 1fr auto;
+  align-items:center;
+  gap:20px;
+  border-bottom:1px solid rgba(255,255,255,.16);
 }
 
-.contact-text small{
-    display:block;
-    font-size:9px;
-    color:#d16e8e;
-    letter-spacing:1px;
-    font-weight:700;
-    margin-bottom:4px;
+.contact-row small{
+  color:#f5abc2;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.4px;
 }
 
-.contact-text span{
-    font-size:12px;
-    color:#31485f;
-    word-break:break-word;
+.contact-value{
+  font-size:13px;
 }
 
 .copy{
-    border:0;
-    background:#ffffff;
-    color:#4a7b9e;
-    padding:7px 10px;
-    border-radius:20px;
-    font-size:9px;
-    font-weight:700;
-    cursor:pointer;
-    flex-shrink:0;
+  border:1px solid rgba(255,255,255,.4);
+  background:transparent;
+  color:white;
+  padding:7px 14px;
+  border-radius:6px;
+  font-size:9px;
+  font-weight:700;
+  cursor:pointer;
 }
 
 .copy:hover{
-    background:#203c57;
-    color:white;
+  background:white;
+  color:var(--navy);
 }
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:25px 0 30px;
-    color:#9ba7b5;
-    font-size:10px;
+  text-align:center;
+  padding:25px;
+  color:#a0abb8;
+  font-size:9px;
+  letter-spacing:.5px;
 }
 
 /* MOBILE */
 
-@media(max-width:750px){
+@media(max-width:760px){
 
-    nav .links{
-        display:none;
-    }
+  .page{
+    width:100%;
+    margin:0;
+  }
 
-    .hero{
-        grid-template-columns:1fr;
-        padding:40px 28px;
-        text-align:center;
-    }
+  nav{
+    padding:0 25px;
+  }
 
-    .small-title{
-        justify-content:center;
-    }
+  .links{
+    display:none;
+  }
 
-    .hero h1{
-        font-size:42px;
-    }
+  .hero{
+    grid-template-columns:1fr;
+    padding:45px 28px 55px;
+    gap:45px;
+  }
 
-    .tags{
-        justify-content:center;
-    }
+  .hero h1{
+    font-size:43px;
+  }
 
-    .photo-wrap{
-        order:-1;
-    }
+  .photo-area{
+    grid-row:1;
+  }
 
-    .photo-frame{
-        width:190px;
-        height:235px;
-    }
+  .photo-card{
+    width:220px;
+  }
 
-    .content{
-        padding:38px 25px;
-    }
+  .photo-card img{
+    height:275px;
+  }
 
-    .about,
-    .two-column{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
+  .section{
+    padding:48px 28px;
+  }
 
-    .info{
-        grid-template-columns:1fr 1fr;
-    }
+  .about-grid,
+  .study-grid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
 
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
+  .project{
+    grid-template-columns:1fr;
+  }
 
-    .project{
-        grid-template-columns:1fr;
-    }
-}
+  .project-number{
+    font-size:25px;
+  }
 
-@media(max-width:430px){
-    .info{
-        grid-template-columns:1fr;
-    }
+  .contact-section{
+    padding:48px 28px;
+  }
+
+  .contact-row{
+    grid-template-columns:1fr auto;
+    padding:18px 0;
+  }
+
+  .contact-row small{
+    grid-column:1 / -1;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
 <nav>
-    <div class="logo">KULISARA<span>.</span></div>
+  <div class="logo">KULISARA<span>.</span></div>
 
-    <div class="links">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#project">Project</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <div class="links">
+    <a href="#about">ABOUT</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#project">PROJECT</a>
+    <a href="#contact">CONTACT</a>
+  </div>
 </nav>
 
-<main class="resume">
 
 <!-- HERO -->
+
 <section class="hero">
 
-    <div>
-        <div class="small-title">RESUME</div>
+  <div class="hero-text">
 
-        <h1>
-            Kulisara
-            <span>Phuakinsaeng</span>
-        </h1>
+    <div class="eyebrow">HELLO, I'M</div>
 
-        <p class="course">
-            Mathematics with Computer Science Student
-        </p>
+    <h1>
+      Kulisara<br>
+      <span>Phuakinsaeng</span>
+    </h1>
 
-        <p class="school">
-            Faculty of Applied Science<br>
-            King Mongkut's University of Technology North Bangkok
-        </p>
-
-        <div class="tags">
-            <span class="tag pink">Year 3</span>
-            <span class="tag">Undergraduate Student</span>
-            <span class="tag">Nonthaburi, Thailand</span>
-        </div>
+    <div class="major">
+      Mathematics with Computer Science Student
     </div>
 
-    <div class="photo-wrap">
-        <div class="photo-frame">
-            <img src="profile.png" alt="Kulisara Phuakinsaeng">
-        </div>
+    <div class="university">
+      King Mongkut's University of Technology North Bangkok
     </div>
+
+    <p class="intro">
+      A third-year undergraduate student interested in programming,
+      web development and problem solving.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="button primary" href="#contact">CONTACT ME</a>
+      <a class="button secondary" href="#project">VIEW PROJECT</a>
+    </div>
+
+  </div>
+
+
+  <div class="photo-area">
+
+    <div class="photo-card">
+
+      <div class="photo-bg"></div>
+
+      <img src="profile.png" alt="Kulisara Phuakinsaeng">
+
+      <div class="year">
+        <small>CURRENT</small>
+        <strong>YEAR 3</strong>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<div class="content">
-
 <!-- ABOUT -->
-<section class="about" id="about">
 
-    <div>
-        <div class="section-label">ABOUT ME</div>
-        <h2 class="section-title">Hello, I'm Kulisara.</h2>
+<section class="section" id="about">
+
+  <div class="section-head">
+    <small>01 / ABOUT ME</small>
+    <h2>A little about me.</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <p class="about-text">
+      I am a third-year Mathematics with Computer Science student
+      at King Mongkut's University of Technology North Bangkok.
+      I have basic experience in programming, web development
+      and mathematical computing through university coursework
+      and academic projects.
+    </p>
+
+    <div class="quick-info">
+
+      <div class="info">
+        <span>LOCATION</span>
+        <strong>Nonthaburi, Thailand</strong>
+      </div>
+
+      <div class="info">
+        <span>FIELD OF STUDY</span>
+        <strong>Mathematics with Computer Science</strong>
+      </div>
+
+      <div class="info">
+        <span>STUDY LEVEL</span>
+        <strong>Undergraduate • Year 3</strong>
+      </div>
+
     </div>
 
-    <div>
-        <p>
-            I am a third-year Mathematics with Computer Science student
-            interested in programming, web development and problem solving.
-            I enjoy learning through coursework and practical projects.
-        </p>
-
-        <div class="info">
-
-            <div class="info-box">
-                <small>LOCATION</small>
-                <strong>Nonthaburi, Thailand</strong>
-            </div>
-
-            <div class="info-box">
-                <small>STATUS</small>
-                <strong>Undergraduate • Year 3</strong>
-            </div>
-
-        </div>
-    </div>
+  </div>
 
 </section>
 
 
 <!-- EDUCATION + SKILLS -->
-<section class="two-column" id="education">
+
+<section class="section" id="education">
+
+  <div class="study-grid">
 
     <div>
-        <div class="section-label">EDUCATION</div>
-        <h2 class="section-title">Education</h2>
 
-        <div class="education">
-            <small>CURRENT</small>
+      <div class="section-head">
+        <small>02 / EDUCATION</small>
+        <h2>Education.</h2>
+      </div>
 
-            <h3>
-                King Mongkut's University of Technology North Bangkok
-            </h3>
+      <div class="study-card">
 
-            <p>
-                Faculty of Applied Science<br>
-                Mathematics with Computer Science
-            </p>
-        </div>
+        <small>CURRENT</small>
+
+        <h3>
+          King Mongkut's University of Technology North Bangkok
+        </h3>
+
+        <p>
+          Faculty of Applied Science<br>
+          Mathematics with Computer Science<br>
+          Undergraduate Student
+        </p>
+
+      </div>
+
     </div>
 
 
-    <div>
-        <div class="section-label">SKILLS</div>
-        <h2 class="section-title">Skills</h2>
+    <div id="skills">
 
-        <div class="skills">
-            <span class="skill">Python • Basic</span>
-            <span class="skill">HTML • Basic</span>
-            <span class="skill">CSS • Basic</span>
-            <span class="skill">MATLAB • Basic</span>
-            <span class="skill">Problem Solving</span>
-            <span class="skill">Data Analysis</span>
-        </div>
+      <div class="section-head">
+        <small>03 / SKILLS</small>
+        <h2>What I use.</h2>
+      </div>
+
+      <div class="skills">
+        <span class="skill">Python · Basic</span>
+        <span class="skill">HTML · Basic</span>
+        <span class="skill">CSS · Basic</span>
+        <span class="skill">MATLAB · Basic</span>
+        <span class="skill">Data Analysis</span>
+        <span class="skill">Problem Solving</span>
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 
 <!-- PROJECT -->
-<section class="project-section" id="project">
 
-    <div class="section-label">ACADEMIC PROJECT</div>
-    <h2 class="section-title">Selected Project</h2>
+<section class="section" id="project">
 
-    <div class="project">
+  <div class="section-head">
+    <small>04 / ACADEMIC PROJECT</small>
+    <h2>Selected project.</h2>
+  </div>
 
-        <div class="project-icon">♢</div>
+  <div class="project">
 
-        <div>
-            <h3>Memory Card Game</h3>
+    <div class="project-number">01</div>
 
-            <p>
-                A responsive memory matching web game created as an
-                academic project, featuring multiple difficulty levels,
-                a timer, scoring system and lives.
-            </p>
+    <div>
 
-            <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Responsive Design</span>
-            </div>
-        </div>
+      <small>WEB APPLICATION</small>
+
+      <h3>Memory Card Game</h3>
+
+      <p>
+        A responsive memory matching web game developed as an academic
+        project. The game includes multiple difficulty levels, a timer,
+        scoring system and lives.
+      </p>
+
+      <div class="project-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Responsive Design</span>
+      </div>
 
     </div>
+
+    <div class="project-type">
+      ACADEMIC PROJECT
+    </div>
+
+  </div>
 
 </section>
 
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
 
-    <div class="contact-header">
-        <div class="section-label">CONTACT</div>
-        <h2>Let's connect.</h2>
-        <p>Feel free to contact me using the information below.</p>
-    </div>
+<section class="contact-section" id="contact">
 
-    <div class="contact-grid">
+  <div class="section-head">
+    <small>05 / CONTACT</small>
+    <h2>Let's connect.</h2>
 
-        <div class="contact-item">
-
-            <div class="contact-text">
-                <small>EMAIL</small>
-                <span>s6704022611190@email.kmutnb.ac.th</span>
-            </div>
-
-            <button class="copy"
-            onclick="copyText('s6704022611190@email.kmutnb.ac.th',this)">
-                COPY
-            </button>
-
-        </div>
+    <p class="contact-intro">
+      Contact information for academic and professional communication.
+    </p>
+  </div>
 
 
-        <div class="contact-item">
+  <div class="contact-list">
 
-            <div class="contact-text">
-                <small>PHONE</small>
-                <span>065-093-5074</span>
-            </div>
+    <div class="contact-row">
 
-            <button class="copy"
-            onclick="copyText('065-093-5074',this)">
-                COPY
-            </button>
+      <small>UNIVERSITY EMAIL</small>
 
-        </div>
+      <div class="contact-value">
+        s6704022611190@email.kmutnb.ac.th
+      </div>
+
+      <button
+        class="copy"
+        onclick="copyText('s6704022611190@email.kmutnb.ac.th',this)">
+        COPY
+      </button>
 
     </div>
+
+
+    <div class="contact-row">
+
+      <small>PHONE</small>
+
+      <div class="contact-value">
+        065-093-5074
+      </div>
+
+      <button
+        class="copy"
+        onclick="copyText('065-093-5074',this)">
+        COPY
+      </button>
+
+    </div>
+
+
+    <div class="contact-row">
+
+      <small>LOCATION</small>
+
+      <div class="contact-value">
+        Nonthaburi, Thailand
+      </div>
+
+      <div></div>
+
+    </div>
+
+  </div>
 
 </section>
 
-</div>
-</main>
 
 <footer>
-    © 2026 Kulisara Phuakinsaeng
+  © 2026 Kulisara Phuakinsaeng • Resume Website
 </footer>
 
 </div>
@@ -739,15 +829,16 @@ footer{
 <script>
 function copyText(text,button){
 
-    navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(text);
 
-    const old = button.innerText;
+  const original = button.innerText;
 
-    button.innerText = "COPIED ✓";
+  button.innerText = "COPIED ✓";
 
-    setTimeout(function(){
-        button.innerText = old;
-    },1400);
+  setTimeout(function(){
+    button.innerText = original;
+  },1500);
+
 }
 </script>
 
