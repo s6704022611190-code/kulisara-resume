@@ -1,362 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kulisara Phuakinsaeng | Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<title>Kulisara Phuakinsaeng | Resume</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f9fd;
+    color:#26364a;
+    line-height:1.6;
+}
+
+.resume{
+    width:min(1100px,92%);
+    margin:45px auto;
+}
+
+/* HEADER */
+
+.header{
+    background:linear-gradient(120deg,#447fb1,#67add8);
+    border-radius:22px;
+    padding:38px 45px;
+    display:flex;
+    align-items:center;
+    gap:35px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(50,105,150,.16);
+}
+
+.header::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:#f3b8ca;
+    opacity:.22;
+    right:-60px;
+    top:-90px;
+}
+
+.profile{
+    width:145px;
+    height:175px;
+    object-fit:cover;
+    object-position:center 25%;
+    border-radius:18px;
+    border:5px solid rgba(255,255,255,.9);
+    position:relative;
+    z-index:2;
+}
+
+.header-text{
+    position:relative;
+    z-index:2;
+}
+
+.header-text .hello{
+    font-size:13px;
+    letter-spacing:2px;
+    color:#ffe4ed;
+    font-weight:bold;
+}
+
+.header-text h1{
+    font-size:40px;
+    margin:4px 0;
+    letter-spacing:.5px;
+}
+
+.header-text h2{
+    font-size:18px;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.header-text p{
+    font-size:14px;
+    color:#edf7ff;
+}
+
+/* GRID */
+
+.top-grid{
+    display:grid;
+    grid-template-columns:1fr 1.25fr 1fr;
+    gap:20px;
+    margin-top:22px;
+}
+
+.card{
+    background:white;
+    border-radius:17px;
+    padding:25px;
+    border:1px solid #e5eef6;
+    box-shadow:0 7px 22px rgba(62,103,140,.07);
+}
+
+.card-title{
+    color:#397eaf;
+    font-size:14px;
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.card-title::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#e795af;
+}
+
+/* PERSONAL INFO */
+
+.info{
+    margin-bottom:12px;
+}
+
+.info small{
+    display:block;
+    color:#e17f9e;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.info p{
+    font-size:13px;
+    color:#45586a;
+}
+
+.info a{
+    color:#45586a;
+    text-decoration:none;
+}
+
+/* ABOUT */
+
+.about p{
+    font-size:13px;
+    color:#607284;
+}
+
+/* SKILLS */
+
+.skill{
+    padding:10px 0;
+    border-bottom:1px solid #eef3f7;
+}
+
+.skill:last-child{
+    border-bottom:none;
+}
+
+.skill strong{
+    color:#354b60;
+    font-size:13px;
+}
+
+.skill p{
+    font-size:11px;
+    color:#788897;
+}
+
+/* SECTION */
+
+.section{
+    background:white;
+    margin-top:22px;
+    border-radius:17px;
+    padding:28px;
+    border:1px solid #e5eef6;
+    box-shadow:0 7px 22px rgba(62,103,140,.07);
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.section-heading span{
+    width:9px;
+    height:25px;
+    border-radius:5px;
+    background:linear-gradient(#e795af,#67add8);
+}
+
+.section-heading h2{
+    color:#304b63;
+    font-size:20px;
+}
+
+/* EDUCATION */
+
+.education{
+    display:flex;
+    gap:22px;
+}
+
+.year{
+    min-width:110px;
+    color:#df7e9c;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.education h3{
+    font-size:16px;
+    color:#344b60;
+}
+
+.education p{
+    color:#697b8c;
+    font-size:13px;
+}
+
+/* SKILL TAGS */
+
+.skills-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tag{
+    padding:8px 15px;
+    border-radius:20px;
+    background:#edf7ff;
+    color:#397eaf;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.tag:nth-child(even){
+    background:#fff0f5;
+    color:#cc718f;
+}
+
+/* PROJECT */
+
+.project{
+    background:linear-gradient(120deg,#f2f9ff,#fff5f8);
+    padding:22px;
+    border-radius:14px;
+    border:1px solid #e7eff5;
+}
+
+.project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.project h3{
+    color:#334d64;
+    font-size:17px;
+}
+
+.project-label{
+    font-size:10px;
+    color:#ca718d;
+    background:white;
+    border:1px solid #f0c7d4;
+    padding:4px 10px;
+    border-radius:15px;
+}
+
+.project p{
+    color:#66798a;
+    font-size:13px;
+}
+
+.project-tags{
+    margin-top:13px;
+}
+
+.project-tags span{
+    display:inline-block;
+    background:white;
+    color:#4785af;
+    font-size:10px;
+    padding:5px 10px;
+    border-radius:12px;
+    margin-right:5px;
+}
+
+/* CONTACT */
+
+.contact{
+    margin-top:22px;
+    background:linear-gradient(120deg,#3f7fae,#68acd5);
+    color:white;
+    border-radius:17px;
+    padding:25px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.contact h2{
+    font-size:19px;
+}
+
+.contact p{
+    font-size:13px;
+    color:#eaf6ff;
+}
+
+.contact-info{
+    text-align:right;
+    font-size:13px;
+}
+
+.contact-info a{
+    color:white;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    color:#8b99a6;
+    font-size:11px;
+    padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .resume{
+        margin:20px auto;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #263238;
-      line-height: 1.6;
+    .header{
+        flex-direction:column;
+        text-align:center;
+        padding:30px 20px;
     }
 
-    header {
-      background: linear-gradient(135deg, #23395d, #406e8e);
-      color: white;
-      padding: 55px 20px;
+    .header-text h1{
+        font-size:30px;
     }
 
-    .hero {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 35px;
+    .top-grid{
+        grid-template-columns:1fr;
     }
 
-    .profile {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      object-position: center 25%;
-      border-radius: 50%;
-      border: 5px solid white;
-      background: white;
+    .education{
+        flex-direction:column;
+        gap:5px;
     }
 
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 5px;
+    .contact{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
     }
 
-    .hero h2 {
-      font-size: 19px;
-      font-weight: normal;
-      margin-bottom: 12px;
+    .contact-info{
+        text-align:center;
     }
+}
+</style>
 
-    .hero p {
-      color: #e8eef5;
-    }
-
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #23395d;
-      margin: 0 14px;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 25px;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    h3 {
-      color: #23395d;
-      font-size: 23px;
-      margin-bottom: 18px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #dce5ee;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .info-box {
-      background: #f5f7fb;
-      padding: 15px;
-      border-radius: 9px;
-    }
-
-    .info-box strong {
-      display: block;
-      color: #406e8e;
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
-
-    .education {
-      border-left: 4px solid #406e8e;
-      padding-left: 18px;
-    }
-
-    .education h4 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .skill {
-      background: #f5f7fb;
-      padding: 18px;
-      border-radius: 10px;
-    }
-
-    .skill strong {
-      color: #23395d;
-    }
-
-    .skill p {
-      font-size: 14px;
-      color: #66727c;
-      margin-top: 5px;
-    }
-
-    .project {
-      background: #f5f7fb;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .project h4 {
-      color: #23395d;
-      margin-bottom: 7px;
-      font-size: 18px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #dce8f2;
-      color: #23395d;
-      padding: 4px 10px;
-      margin-top: 10px;
-      margin-right: 5px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
-
-    .contact a {
-      color: #406e8e;
-      text-decoration: none;
-    }
-
-    footer {
-      background: #23395d;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      margin-top: 35px;
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 29px;
-      }
-
-      .info-grid,
-      .skills {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px 8px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="hero">
-    <img src="profile.png" alt="Kulisara Phuakinsaeng" class="profile">
+<div class="resume">
 
-    <div>
-      <h1>Kulisara Phuakinsaeng</h1>
-      <h2>Mathematics with Computer Science Student</h2>
-      <p>
-        Faculty of Applied Science<br>
-        King Mongkut's University of Technology North Bangkok
-      </p>
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <img src="profile.png"
+             alt="Kulisara Phuakinsaeng"
+             class="profile">
+
+        <div class="header-text">
+
+            <div class="hello">HELLO, I'M</div>
+
+            <h1>KULISARA PHUAKINSAENG</h1>
+
+            <h2>Mathematics with Computer Science Student</h2>
+
+            <p>
+                Faculty of Applied Science<br>
+                King Mongkut's University of Technology North Bangkok
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- TOP CARDS -->
+
+    <div class="top-grid">
+
+        <!-- PERSONAL INFO -->
+
+        <div class="card">
+
+            <h3 class="card-title">
+                Personal Info
+            </h3>
+
+            <div class="info">
+                <small>FULL NAME</small>
+                <p>Kulisara Phuakinsaeng</p>
+            </div>
+
+            <div class="info">
+                <small>STUDENT ID</small>
+                <p>6704022611190</p>
+            </div>
+
+            <div class="info">
+                <small>DATE OF BIRTH</small>
+                <p>18 May 2006</p>
+            </div>
+
+            <div class="info">
+                <small>LOCATION</small>
+                <p>Nonthaburi, Thailand</p>
+            </div>
+
+            <div class="info">
+                <small>EMAIL</small>
+
+                <p>
+                    <a href="mailto:s6704022611190@email.kmutnb.ac.th">
+                        s6704022611190@email.kmutnb.ac.th
+                    </a>
+                </p>
+            </div>
+
+            <div class="info">
+                <small>PHONE</small>
+                <p>065-093-5074</p>
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT ME -->
+
+        <div class="card about">
+
+            <h3 class="card-title">
+                About Me
+            </h3>
+
+            <p>
+                I am a third-year student in Mathematics with Computer Science
+                at King Mongkut's University of Technology North Bangkok.
+                I have basic knowledge of programming, web development,
+                mathematics and data analysis through university coursework
+                and academic projects.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in developing my technical and problem-solving
+                skills while gaining more experience through my studies
+                and practical projects.
+            </p>
+
+        </div>
+
+
+        <!-- KEY SKILLS -->
+
+        <div class="card">
+
+            <h3 class="card-title">
+                Key Skills
+            </h3>
+
+            <div class="skill">
+                <strong>Programming</strong>
+                <p>Basic Python programming</p>
+            </div>
+
+            <div class="skill">
+                <strong>Web Development</strong>
+                <p>Basic HTML & CSS</p>
+            </div>
+
+            <div class="skill">
+                <strong>Mathematical Computing</strong>
+                <p>Basic MATLAB usage</p>
+            </div>
+
+            <div class="skill">
+                <strong>Data Analysis</strong>
+                <p>Basic data interpretation</p>
+            </div>
+
+            <div class="skill">
+                <strong>Problem Solving</strong>
+                <p>Logical and analytical thinking</p>
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
-  <a href="#project">Project</a>
-  <a href="#contact">Contact</a>
-</nav>
 
-<div class="container">
+    <!-- EDUCATION -->
 
-  <section id="about">
-    <h3>About Me</h3>
+    <section class="section">
 
-    <p>
-      I am a third-year student in Mathematics with Computer Science
-      at King Mongkut's University of Technology North Bangkok.
-      I have basic experience in programming, web development,
-      mathematics, and data analysis through university coursework
-      and academic activities.
-    </p>
+        <div class="section-heading">
+            <span></span>
+            <h2>Education</h2>
+        </div>
 
-    <br>
+        <div class="education">
 
-    <div class="info-grid">
-      <div class="info-box">
-        <strong>FULL NAME</strong>
-        Kulisara Phuakinsaeng
-      </div>
+            <div class="year">
+                CURRENT<br>
+                YEAR 3
+            </div>
 
-      <div class="info-box">
-        <strong>STUDENT ID</strong>
-        6704022611190
-      </div>
+            <div>
 
-      <div class="info-box">
-        <strong>DATE OF BIRTH</strong>
-        18 May 2006
-      </div>
+                <h3>
+                    King Mongkut's University of Technology North Bangkok
+                </h3>
 
-      <div class="info-box">
-        <strong>LOCATION</strong>
-        Nonthaburi, Thailand
-      </div>
-    </div>
-  </section>
+                <p>
+                    Faculty of Applied Science
+                </p>
 
-  <section id="education">
-    <h3>Education</h3>
+                <p>
+                    Mathematics with Computer Science
+                </p>
 
-    <div class="education">
-      <h4>King Mongkut's University of Technology North Bangkok</h4>
-      <p><strong>Faculty of Applied Science</strong></p>
-      <p>Mathematics with Computer Science</p>
-      <p>Undergraduate Student — Year 3</p>
-    </div>
-  </section>
+                <p>
+                    Undergraduate Student
+                </p>
 
-  <section id="skills">
-    <h3>Skills</h3>
+            </div>
 
-    <div class="skills">
+        </div>
 
-      <div class="skill">
-        <strong>Python</strong>
-        <p>Basic programming and problem solving</p>
-      </div>
+    </section>
 
-      <div class="skill">
-        <strong>HTML & CSS</strong>
-        <p>Basic web page development and design</p>
-      </div>
 
-      <div class="skill">
-        <strong>MATLAB</strong>
-        <p>Basic mathematical and numerical computation</p>
-      </div>
+    <!-- TECHNICAL SKILLS -->
 
-      <div class="skill">
-        <strong>Mathematics</strong>
-        <p>Mathematical concepts and problem solving</p>
-      </div>
+    <section class="section">
 
-      <div class="skill">
-        <strong>Data Analysis</strong>
-        <p>Basic data analysis and interpretation</p>
-      </div>
+        <div class="section-heading">
+            <span></span>
+            <h2>Technical Skills</h2>
+        </div>
 
-      <div class="skill">
-        <strong>Problem Solving</strong>
-        <p>Logical thinking and analytical skills</p>
-      </div>
+        <div class="skills-list">
 
-    </div>
-  </section>
+            <span class="tag">Python</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">Mathematics</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Problem Solving</span>
 
-  <section id="project">
-    <h3>Academic Project</h3>
+        </div>
 
-    <div class="project">
-      <h4>Memory Card Game</h4>
+    </section>
 
-      <p>
-        A web-based memory matching game developed as an academic project.
-        Players flip cards to find matching pairs with different difficulty
-        levels, score, timer, and lives.
-      </p>
 
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">Web Application</span>
-    </div>
-  </section>
+    <!-- PROJECT -->
 
-  <section id="contact" class="contact">
-    <h3>Contact</h3>
+    <section class="section">
 
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:s6704022611190@email.kmutnb.ac.th">
-        s6704022611190@email.kmutnb.ac.th
-      </a>
-    </p>
+        <div class="section-heading">
+            <span></span>
+            <h2>Academic Project</h2>
+        </div>
 
-    <p><strong>Phone:</strong> 065-093-5074</p>
-    <p><strong>Location:</strong> Nonthaburi, Thailand</p>
-  </section>
+        <div class="project">
+
+            <div class="project-top">
+
+                <h3>Memory Card Game</h3>
+
+                <span class="project-label">
+                    WEB APPLICATION
+                </span>
+
+            </div>
+
+            <p>
+                A web-based memory matching game developed as an academic
+                project. Players flip cards to find matching pairs with
+                multiple difficulty levels, a timer, score system and lives.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact">
+
+        <div>
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Thank you for visiting my resume website.
+            </p>
+
+        </div>
+
+        <div class="contact-info">
+
+            <p>
+                s6704022611190@email.kmutnb.ac.th
+            </p>
+
+            <p>
+                065-093-5074
+            </p>
+
+            <p>
+                Nonthaburi, Thailand
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        © 2026 Kulisara Phuakinsaeng • Resume Website
+    </footer>
 
 </div>
-
-<footer>
-  <p>© 2026 Kulisara Phuakinsaeng | Resume Website</p>
-</footer>
 
 </body>
 </html>
