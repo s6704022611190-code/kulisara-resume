@@ -9,14 +9,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{
-  --navy:#172942;
-  --text:#52657b;
-  --pink:#ee8eae;
-  --pink-soft:#fff0f5;
-  --blue:#75b9df;
-  --blue-soft:#edf8fd;
-  --cream:#fffdfc;
-  --line:#e4ebf1;
+  --navy:#18324a;
+  --text:#5f7182;
+  --pink:#d98fa6;
+  --pink-soft:#fbf1f4;
+  --blue:#78aeca;
+  --blue-soft:#edf5f8;
+  --cream:#fdfcfb;
+  --white:#ffffff;
+  --line:#e5eaed;
 }
 
 *{
@@ -31,32 +32,37 @@ html{
 
 body{
   font-family:'DM Sans',Arial,sans-serif;
-  background:#f6f8fa;
+  background:#f1f3f4;
   color:var(--navy);
 }
 
 .page{
-  width:min(1120px,94%);
-  margin:28px auto;
+  width:min(1160px,96%);
+  margin:18px auto;
   background:var(--cream);
-  box-shadow:0 12px 40px rgba(31,54,78,.07);
+  box-shadow:0 8px 35px rgba(28,48,65,.06);
+  overflow:hidden;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 nav{
-  height:72px;
-  padding:0 58px;
+  height:74px;
+  padding:0 64px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   border-bottom:1px solid var(--line);
+  background:rgba(253,252,251,.96);
+  position:relative;
+  z-index:100;
 }
 
 .logo{
   font-size:17px;
   font-weight:700;
   letter-spacing:3px;
+  white-space:nowrap;
 }
 
 .logo span{
@@ -65,13 +71,14 @@ nav{
 
 .links{
   display:flex;
-  gap:28px;
+  align-items:center;
+  gap:30px;
 }
 
 .links a{
   text-decoration:none;
-  color:#718096;
-  font-size:12px;
+  color:#647588;
+  font-size:11px;
   font-weight:600;
   transition:.2s;
 }
@@ -80,82 +87,114 @@ nav{
   color:var(--pink);
 }
 
-/* HERO */
+.menu-button{
+  display:none;
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:9px;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+
+.menu-button span{
+  width:18px;
+  height:2px;
+  background:var(--navy);
+  border-radius:10px;
+  transition:.25s;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-  min-height:480px;
-  padding:65px 70px;
+  min-height:500px;
+  padding:65px 75px;
   display:grid;
-  grid-template-columns:1.15fr .85fr;
+  grid-template-columns:1.1fr .9fr;
   align-items:center;
-  gap:70px;
+  gap:65px;
 }
 
 .eyebrow{
   color:var(--pink);
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:2.5px;
-  margin-bottom:18px;
+  letter-spacing:2.6px;
+  margin-bottom:17px;
 }
 
 .hero h1{
-  font-size:55px;
-  line-height:1.04;
-  letter-spacing:-2.5px;
-  max-width:600px;
+  font-size:54px;
+  line-height:1.03;
+  letter-spacing:-2.3px;
 }
 
 .hero h1 span{
-  color:#4d9dcc;
+  color:var(--blue);
 }
 
 .major{
-  margin-top:21px;
+  margin-top:24px;
   font-size:17px;
   font-weight:500;
-  color:#425b74;
+  color:#334f65;
 }
 
 .university{
   margin-top:8px;
-  color:#8795a5;
-  font-size:13px;
+  color:#8a98a5;
+  font-size:12px;
   line-height:1.6;
 }
 
 .intro{
-  max-width:500px;
-  margin-top:22px;
+  max-width:510px;
+  margin-top:25px;
+  color:#687b8c;
   font-size:13px;
-  color:#718096;
   line-height:1.8;
 }
 
 .hero-buttons{
-  margin-top:27px;
   display:flex;
   gap:10px;
+  margin-top:28px;
 }
 
 .button{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:11px 20px;
-  border-radius:8px;
+  border-radius:7px;
   text-decoration:none;
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
+  transition:.2s;
 }
 
 .primary{
-  background:var(--navy);
   color:white;
+  background:var(--navy);
+}
+
+.primary:hover{
+  background:#294a65;
 }
 
 .secondary{
-  border:1px solid #dce5ec;
-  color:#597087;
+  color:#587083;
+  border:1px solid #d6e0e5;
   background:white;
+}
+
+.secondary:hover{
+  border-color:var(--blue);
 }
 
 /* PHOTO */
@@ -166,375 +205,637 @@ nav{
 }
 
 .photo-card{
+  width:280px;
   position:relative;
-  width:275px;
 }
 
 .photo-bg{
   position:absolute;
-  width:100%;
-  height:100%;
+  inset:0;
+  transform:translate(15px,15px);
   background:var(--blue-soft);
-  border-radius:22px;
-  transform:translate(16px,16px);
+  border-radius:18px;
 }
 
 .photo-card::before{
   content:"";
   position:absolute;
-  width:65px;
-  height:65px;
+  width:66px;
+  height:66px;
   border-radius:50%;
-  background:#f8c8d7;
-  left:-28px;
-  top:-25px;
+  background:#f2c3d0;
+  left:-27px;
+  top:-27px;
 }
 
 .photo-card img{
   position:relative;
   z-index:2;
   width:100%;
-  height:340px;
+  height:345px;
+  display:block;
   object-fit:cover;
   object-position:center 22%;
-  border-radius:20px;
-  display:block;
+  border-radius:14px;
 }
 
 .year{
   position:absolute;
   z-index:3;
-  right:-22px;
+  right:-23px;
   bottom:20px;
-  background:white;
   padding:11px 16px;
   border-radius:10px;
-  box-shadow:0 8px 25px rgba(31,54,78,.12);
+  background:white;
+  box-shadow:0 8px 25px rgba(30,50,70,.12);
 }
 
 .year small{
   display:block;
-  color:#9aa6b4;
-  font-size:8px;
+  margin-bottom:3px;
+  color:#9aa5ae;
+  font-size:7px;
   letter-spacing:1px;
 }
 
 .year strong{
-  font-size:12px;
+  font-size:11px;
 }
 
-/* SECTIONS */
+/* ================= COMMON SECTION ================= */
 
 .section{
-  padding:60px 70px;
+  padding:52px 75px;
   border-top:1px solid var(--line);
 }
 
 .section-head{
-  margin-bottom:32px;
+  margin-bottom:27px;
 }
 
 .section-head small{
   display:block;
+  margin-bottom:8px;
   color:var(--pink);
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:2px;
-  margin-bottom:8px;
 }
 
 .section-head h2{
-  font-size:30px;
+  font-size:28px;
   letter-spacing:-1px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-grid{
   display:grid;
   grid-template-columns:1.1fr .9fr;
-  gap:70px;
+  gap:65px;
+  align-items:start;
 }
 
 .about-text{
+  max-width:530px;
   color:var(--text);
-  font-size:14px;
+  font-size:13px;
   line-height:1.9;
 }
 
 .quick-info{
-  display:grid;
-  gap:12px;
+  background:#f8fafb;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:8px 20px;
 }
 
 .info{
-  display:flex;
-  justify-content:space-between;
-  padding-bottom:12px;
+  min-height:57px;
+  display:grid;
+  grid-template-columns:120px 1fr;
+  align-items:center;
+  gap:15px;
   border-bottom:1px solid var(--line);
 }
 
+.info:last-child{
+  border-bottom:0;
+}
+
 .info span{
-  color:#9aa6b4;
-  font-size:10px;
+  color:#9aa5af;
+  font-size:8px;
   font-weight:700;
   letter-spacing:1px;
 }
 
 .info strong{
-  color:#42586e;
-  font-size:12px;
+  color:#41596d;
+  font-size:11px;
   text-align:right;
 }
 
-/* EDUCATION SKILLS */
+/* ================= EDUCATION + SKILLS ================= */
 
 .study-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:70px;
+  gap:28px;
+}
+
+.study-box{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:28px;
+}
+
+.study-box .section-head{
+  margin-bottom:22px;
 }
 
 .study-card{
-  border-left:3px solid #acd9f1;
-  padding-left:18px;
+  padding:18px;
+  background:#f8fafb;
+  border-radius:11px;
+  border-left:3px solid var(--blue);
 }
 
 .study-card small{
   color:var(--pink);
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
-  letter-spacing:1.5px;
+  letter-spacing:1.4px;
 }
 
 .study-card h3{
-  font-size:15px;
+  margin:7px 0;
+  font-size:14px;
   line-height:1.5;
-  margin:8px 0 5px;
 }
 
 .study-card p{
-  font-size:12px;
+  color:#718291;
+  font-size:11px;
   line-height:1.7;
-  color:#75869a;
 }
 
 .skills{
   display:flex;
   flex-wrap:wrap;
-  gap:9px;
+  gap:8px;
 }
 
 .skill{
-  padding:8px 13px;
+  padding:9px 12px;
   border-radius:7px;
-  font-size:11px;
   background:var(--blue-soft);
-  color:#397da6;
+  color:#477d98;
+  font-size:10px;
 }
 
 .skill:nth-child(even){
   background:var(--pink-soft);
-  color:#bd6784;
+  color:#ad687d;
 }
 
-/* PROJECT */
+/* ================= PROJECTS ================= */
 
-.project{
+.projects-intro{
+  max-width:540px;
+  margin-top:-14px;
+  margin-bottom:27px;
+  color:#7a8996;
+  font-size:11px;
+  line-height:1.7;
+}
+
+.projects-grid{
   display:grid;
-  grid-template-columns:110px 1fr auto;
-  gap:25px;
-  align-items:center;
-  padding:25px 0;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.project-card{
+  position:relative;
+  min-height:245px;
+  padding:28px;
+  border:1px solid #e4e8eb;
+  border-radius:16px;
+  background:white;
+  transition:.25s;
+}
+
+.project-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(30,50,70,.07);
 }
 
 .project-number{
-  font-size:38px;
+  position:absolute;
+  right:23px;
+  top:18px;
+  color:#e8b4c3;
+  font-size:30px;
   font-weight:700;
-  color:#acd9f1;
 }
 
-.project small{
+.project-label{
   color:var(--pink);
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
   letter-spacing:1.5px;
 }
 
-.project h3{
-  margin:5px 0 7px;
-  font-size:19px;
+.project-card h3{
+  margin:18px 0 10px;
+  padding-right:45px;
+  font-size:18px;
 }
 
-.project p{
-  color:#718096;
-  font-size:12px;
-  line-height:1.7;
+.project-card p{
+  color:#697b8b;
+  font-size:11px;
+  line-height:1.8;
 }
 
 .project-tags{
-  margin-top:11px;
   display:flex;
   flex-wrap:wrap;
   gap:6px;
+  margin-top:18px;
 }
 
 .project-tags span{
   padding:5px 9px;
-  border:1px solid #dce6ed;
   border-radius:5px;
-  font-size:9px;
-  color:#63778a;
+  background:#f4f7f8;
+  color:#617889;
+  font-size:8px;
 }
 
-.project-type{
-  font-size:10px;
-  color:#8a98a8;
-  white-space:nowrap;
+.project-card:first-child{
+  background:linear-gradient(145deg,#fff,#fbf3f5);
 }
 
-/* CONTACT */
+.project-card:nth-child(2){
+  background:linear-gradient(145deg,#fff,#f0f7fa);
+}
+
+/* ================= CONTACT ================= */
 
 .contact-section{
-  background:linear-gradient(120deg,#203a58,#49637e);
-  color:white;
-  padding:60px 70px;
+  padding:52px 75px;
+  border-top:1px solid var(--line);
+  background:linear-gradient(125deg,#f2f8fa,#fbf2f5);
+}
+
+.contact-wrap{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:60px;
+  align-items:center;
+}
+
+.contact-section .section-head{
+  margin-bottom:0;
 }
 
 .contact-section .section-head small{
-  color:#9bd7f5;
+  color:var(--pink);
 }
 
 .contact-section .section-head h2{
-  color:white;
+  margin-bottom:10px;
 }
 
 .contact-intro{
-  color:#d1dbe5;
-  font-size:12px;
-  margin-top:8px;
+  color:#71818e;
+  font-size:11px;
+  line-height:1.7;
 }
 
 .contact-list{
-  border-top:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.75);
+  border:1px solid white;
+  border-radius:14px;
+  padding:0 20px;
 }
 
 .contact-row{
-  min-height:76px;
+  min-height:65px;
   display:grid;
-  grid-template-columns:150px 1fr auto;
+  grid-template-columns:130px 1fr auto;
   align-items:center;
-  gap:20px;
-  border-bottom:1px solid rgba(255,255,255,.16);
+  gap:16px;
+  border-bottom:1px solid #e4e9ec;
+}
+
+.contact-row:last-child{
+  border-bottom:0;
 }
 
 .contact-row small{
-  color:#f5abc2;
-  font-size:9px;
+  color:#a56b7c;
+  font-size:8px;
   font-weight:700;
-  letter-spacing:1.4px;
+  letter-spacing:1px;
 }
 
 .contact-value{
-  font-size:13px;
+  color:#425a6d;
+  font-size:11px;
+  word-break:break-word;
 }
 
 .copy{
-  border:1px solid rgba(255,255,255,.4);
-  background:transparent;
-  color:white;
-  padding:7px 14px;
+  padding:7px 12px;
+  border:1px solid #cad9e1;
   border-radius:6px;
-  font-size:9px;
+  background:white;
+  color:#50768d;
+  font-size:8px;
   font-weight:700;
   cursor:pointer;
 }
 
 .copy:hover{
-  background:white;
-  color:var(--navy);
+  color:white;
+  background:var(--navy);
+  border-color:var(--navy);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
+  padding:22px;
   text-align:center;
-  padding:25px;
-  color:#a0abb8;
-  font-size:9px;
-  letter-spacing:.5px;
+  color:#a0aab2;
+  font-size:8px;
 }
 
-/* MOBILE */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media(max-width:760px){
+@media(max-width:900px){
+
+  nav{
+    padding:0 35px;
+  }
+
+  .links{
+    gap:18px;
+  }
+
+  .hero{
+    padding:55px 45px;
+    gap:35px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .photo-card{
+    width:240px;
+  }
+
+  .photo-card img{
+    height:300px;
+  }
+
+  .section,
+  .contact-section{
+    padding:48px 45px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+  body{
+    background:var(--cream);
+  }
 
   .page{
     width:100%;
     margin:0;
+    box-shadow:none;
   }
 
   nav{
-    padding:0 25px;
+    height:66px;
+    padding:0 22px;
+    position:sticky;
+    top:0;
+  }
+
+  .logo{
+    font-size:15px;
+  }
+
+  .menu-button{
+    display:flex;
   }
 
   .links{
     display:none;
+    position:absolute;
+    top:66px;
+    left:0;
+    right:0;
+    padding:12px 20px 18px;
+    background:white;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 12px 25px rgba(30,50,70,.08);
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
   }
 
+  .links.open{
+    display:flex;
+  }
+
+  .links a{
+    padding:12px 4px;
+    font-size:11px;
+    border-bottom:1px solid #f0f2f3;
+  }
+
+  .links a:last-child{
+    border-bottom:0;
+  }
+
+  /* Hero: TEXT FIRST */
+
   .hero{
-    grid-template-columns:1fr;
-    padding:45px 28px 55px;
-    gap:45px;
+    min-height:auto;
+    padding:48px 25px 55px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:42px;
+  }
+
+  .hero-text{
+    order:1;
+  }
+
+  .photo-area{
+    order:2;
   }
 
   .hero h1{
     font-size:43px;
+    letter-spacing:-1.8px;
   }
 
-  .photo-area{
-    grid-row:1;
+  .major{
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .university{
+    font-size:11px;
+  }
+
+  .intro{
+    font-size:12px;
+  }
+
+  .hero-buttons{
+    flex-wrap:wrap;
+  }
+
+  .button{
+    padding:11px 17px;
   }
 
   .photo-card{
-    width:220px;
+    width:min(245px,78vw);
   }
 
   .photo-card img{
-    height:275px;
+    height:300px;
   }
+
+  .year{
+    right:-15px;
+  }
+
+  /* Sections */
 
   .section{
-    padding:48px 28px;
+    padding:43px 25px;
   }
 
-  .about-grid,
-  .study-grid{
-    grid-template-columns:1fr;
-    gap:38px;
+  .section-head{
+    margin-bottom:22px;
   }
 
-  .project{
-    grid-template-columns:1fr;
-  }
-
-  .project-number{
+  .section-head h2{
     font-size:25px;
   }
 
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:27px;
+  }
+
+  .about-text{
+    font-size:12px;
+  }
+
+  .info{
+    grid-template-columns:105px 1fr;
+  }
+
+  .study-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .study-box{
+    padding:22px;
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-card{
+    min-height:auto;
+    padding:24px;
+  }
+
   .contact-section{
-    padding:48px 28px;
+    padding:43px 25px;
+  }
+
+  .contact-wrap{
+    grid-template-columns:1fr;
+    gap:27px;
   }
 
   .contact-row{
     grid-template-columns:1fr auto;
-    padding:18px 0;
+    gap:8px;
+    padding:15px 0;
   }
 
   .contact-row small{
     grid-column:1 / -1;
+  }
+
+  .contact-value{
+    font-size:10px;
+  }
+}
+
+/* SMALL PHONE */
+
+@media(max-width:400px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .button{
+    padding:10px 8px;
+  }
+
+  .photo-card{
+    width:215px;
+  }
+
+  .photo-card img{
+    height:265px;
+  }
+
+  .info{
+    display:block;
+    padding:13px 0;
+  }
+
+  .info span{
+    display:block;
+    margin-bottom:5px;
+  }
+
+  .info strong{
+    display:block;
+    text-align:left;
   }
 }
 </style>
@@ -544,21 +845,34 @@ footer{
 
 <div class="page">
 
+<!-- NAV -->
 <nav>
-  <div class="logo">KULISARA<span>.</span></div>
 
-  <div class="links">
-    <a href="#about">ABOUT</a>
-    <a href="#education">EDUCATION</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#project">PROJECT</a>
-    <a href="#contact">CONTACT</a>
+  <div class="logo">
+    KULISARA<span>.</span>
   </div>
+
+  <div class="links" id="navLinks">
+    <a href="#about" onclick="closeMenu()">ABOUT</a>
+    <a href="#education" onclick="closeMenu()">EDUCATION</a>
+    <a href="#skills" onclick="closeMenu()">SKILLS</a>
+    <a href="#projects" onclick="closeMenu()">PROJECTS</a>
+    <a href="#contact" onclick="closeMenu()">CONTACT</a>
+  </div>
+
+  <button
+    class="menu-button"
+    onclick="toggleMenu()"
+    aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
 </nav>
 
 
 <!-- HERO -->
-
 <section class="hero">
 
   <div class="hero-text">
@@ -580,12 +894,19 @@ footer{
 
     <p class="intro">
       A third-year undergraduate student interested in programming,
-      web development and problem solving.
+      web development, data analysis and problem solving.
     </p>
 
     <div class="hero-buttons">
-      <a class="button primary" href="#contact">CONTACT ME</a>
-      <a class="button secondary" href="#project">VIEW PROJECT</a>
+
+      <a class="button primary" href="#contact">
+        CONTACT ME
+      </a>
+
+      <a class="button secondary" href="#projects">
+        VIEW PROJECTS
+      </a>
+
     </div>
 
   </div>
@@ -597,7 +918,9 @@ footer{
 
       <div class="photo-bg"></div>
 
-      <img src="profile.png" alt="Kulisara Phuakinsaeng">
+      <img
+        src="profile.png"
+        alt="Kulisara Phuakinsaeng">
 
       <div class="year">
         <small>CURRENT</small>
@@ -612,7 +935,6 @@ footer{
 
 
 <!-- ABOUT -->
-
 <section class="section" id="about">
 
   <div class="section-head">
@@ -625,9 +947,9 @@ footer{
     <p class="about-text">
       I am a third-year Mathematics with Computer Science student
       at King Mongkut's University of Technology North Bangkok.
-      I have basic experience in programming, web development
-      and mathematical computing through university coursework
-      and academic projects.
+      I have basic experience in programming, web development,
+      data analysis and mathematical computing through university
+      coursework and academic projects.
     </p>
 
     <div class="quick-info">
@@ -644,7 +966,7 @@ footer{
 
       <div class="info">
         <span>STUDY LEVEL</span>
-        <strong>Undergraduate • Year 3</strong>
+        <strong>Undergraduate · Year 3</strong>
       </div>
 
     </div>
@@ -655,12 +977,11 @@ footer{
 
 
 <!-- EDUCATION + SKILLS -->
-
 <section class="section" id="education">
 
   <div class="study-grid">
 
-    <div>
+    <div class="study-box">
 
       <div class="section-head">
         <small>02 / EDUCATION</small>
@@ -678,7 +999,7 @@ footer{
         <p>
           Faculty of Applied Science<br>
           Mathematics with Computer Science<br>
-          Undergraduate Student
+          Undergraduate Student · Year 3
         </p>
 
       </div>
@@ -686,20 +1007,22 @@ footer{
     </div>
 
 
-    <div id="skills">
+    <div class="study-box" id="skills">
 
       <div class="section-head">
         <small>03 / SKILLS</small>
-        <h2>What I use.</h2>
+        <h2>Skills & Tools.</h2>
       </div>
 
       <div class="skills">
+
         <span class="skill">Python · Basic</span>
         <span class="skill">HTML · Basic</span>
         <span class="skill">CSS · Basic</span>
         <span class="skill">MATLAB · Basic</span>
         <span class="skill">Data Analysis</span>
         <span class="skill">Problem Solving</span>
+
       </div>
 
     </div>
@@ -709,29 +1032,38 @@ footer{
 </section>
 
 
-<!-- PROJECT -->
-
-<section class="section" id="project">
+<!-- PROJECTS -->
+<section class="section" id="projects">
 
   <div class="section-head">
-    <small>04 / ACADEMIC PROJECT</small>
-    <h2>Selected project.</h2>
+    <small>04 / PROJECTS</small>
+    <h2>Academic projects.</h2>
   </div>
 
-  <div class="project">
+  <p class="projects-intro">
+    Selected projects developed through university coursework
+    and practical web development assignments.
+  </p>
 
-    <div class="project-number">01</div>
 
-    <div>
+  <div class="projects-grid">
 
-      <small>WEB APPLICATION</small>
+    <!-- PROJECT 01 -->
+    <article class="project-card">
+
+      <div class="project-number">01</div>
+
+      <div class="project-label">
+        WEB APPLICATION
+      </div>
 
       <h3>Memory Card Game</h3>
 
       <p>
-        A responsive memory matching web game developed as an academic
-        project. The game includes multiple difficulty levels, a timer,
-        scoring system and lives.
+        A responsive memory matching web game featuring multiple
+        difficulty levels, a timer, scoring system and lives.
+        The interface was designed to work across different
+        screen sizes.
       </p>
 
       <div class="project-tags">
@@ -741,11 +1073,34 @@ footer{
         <span>Responsive Design</span>
       </div>
 
-    </div>
+    </article>
 
-    <div class="project-type">
-      ACADEMIC PROJECT
-    </div>
+
+    <!-- PROJECT 02 -->
+    <article class="project-card">
+
+      <div class="project-number">02</div>
+
+      <div class="project-label">
+        PERSONAL WEBSITE
+      </div>
+
+      <h3>Resume Website</h3>
+
+      <p>
+        A responsive personal resume website created to present
+        education, skills, academic projects and contact information.
+        The website is published online using GitHub Pages.
+      </p>
+
+      <div class="project-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>GitHub Pages</span>
+      </div>
+
+    </article>
 
   </div>
 
@@ -753,64 +1108,79 @@ footer{
 
 
 <!-- CONTACT -->
-
 <section class="contact-section" id="contact">
 
-  <div class="section-head">
-    <small>05 / CONTACT</small>
-    <h2>Let's connect.</h2>
+  <div class="contact-wrap">
 
-    <p class="contact-intro">
-      Contact information for academic and professional communication.
-    </p>
-  </div>
+    <div>
 
+      <div class="section-head">
 
-  <div class="contact-list">
+        <small>05 / CONTACT</small>
 
-    <div class="contact-row">
+        <h2>Let's connect.</h2>
 
-      <small>UNIVERSITY EMAIL</small>
+        <p class="contact-intro">
+          Feel free to contact me for academic
+          or professional communication.
+        </p>
 
-      <div class="contact-value">
-        s6704022611190@email.kmutnb.ac.th
       </div>
-
-      <button
-        class="copy"
-        onclick="copyText('s6704022611190@email.kmutnb.ac.th',this)">
-        COPY
-      </button>
 
     </div>
 
 
-    <div class="contact-row">
+    <div class="contact-list">
 
-      <small>PHONE</small>
+      <div class="contact-row">
 
-      <div class="contact-value">
-        065-093-5074
+        <small>UNIVERSITY EMAIL</small>
+
+        <div class="contact-value">
+          s6704022611190@email.kmutnb.ac.th
+        </div>
+
+        <button
+          class="copy"
+          onclick="copyText(
+          's6704022611190@email.kmutnb.ac.th',
+          this)">
+          COPY
+        </button>
+
       </div>
 
-      <button
-        class="copy"
-        onclick="copyText('065-093-5074',this)">
-        COPY
-      </button>
 
-    </div>
+      <div class="contact-row">
 
+        <small>PHONE</small>
 
-    <div class="contact-row">
+        <div class="contact-value">
+          065-093-5074
+        </div>
 
-      <small>LOCATION</small>
+        <button
+          class="copy"
+          onclick="copyText(
+          '065-093-5074',
+          this)">
+          COPY
+        </button>
 
-      <div class="contact-value">
-        Nonthaburi, Thailand
       </div>
 
-      <div></div>
+
+      <div class="contact-row">
+
+        <small>LOCATION</small>
+
+        <div class="contact-value">
+          Nonthaburi, Thailand
+        </div>
+
+        <div></div>
+
+      </div>
 
     </div>
 
@@ -820,13 +1190,33 @@ footer{
 
 
 <footer>
-  © 2026 Kulisara Phuakinsaeng • Resume Website
+  © 2026 Kulisara Phuakinsaeng · Resume Website
 </footer>
 
 </div>
 
 
 <script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+  document
+    .getElementById("navLinks")
+    .classList
+    .toggle("open");
+}
+
+function closeMenu(){
+  document
+    .getElementById("navLinks")
+    .classList
+    .remove("open");
+}
+
+
+/* COPY CONTACT */
+
 function copyText(text,button){
 
   navigator.clipboard.writeText(text);
@@ -840,6 +1230,7 @@ function copyText(text,button){
   },1500);
 
 }
+
 </script>
 
 </body>
